@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setup(
     name='django-rango',
-    version='0.0.2',
+    version='0.0.3',
     description='A database router based on incoming host address.',
     long_description=readme,
     author='Amin Sabbaghian',

@@ -23,4 +23,4 @@ class MultiHostDBRouterMiddleware(object):
 
     @staticmethod
     def _find_request_host(request):
-        return request.META['HTTP_HOST']
+        return request.META.get('HTTP_HOST')
