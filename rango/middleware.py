@@ -1,4 +1,4 @@
-from rango import current_db
+from rango import current_host
 
 
 class MultiHostDBRouterMiddleware(object):
@@ -15,7 +15,7 @@ class MultiHostDBRouterMiddleware(object):
         self.get_response = get_response
 
     def __call__(self, request):
-        current_db.db = self._find_request_host(request)
+        current_host.host = self._find_request_host(request)
 
         response = self.get_response(request)
 

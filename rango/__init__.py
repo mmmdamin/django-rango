@@ -1,3 +1,3 @@
 import threading
 
-current_db = threading.local()
+current_host = threading.local()

@@ -1,6 +1,6 @@
 from django.db.utils import DEFAULT_DB_ALIAS
 
-from rango import current_db
+from rango.utils import get_host
 
 
 class MultiHostDBRouter(object):
@@ -9,6 +9,6 @@ class MultiHostDBRouter(object):
     """
 
     def db_for_read(self, model, **hints):
-        return getattr(current_db, 'db', DEFAULT_DB_ALIAS) or DEFAULT_DB_ALIAS
+        return get_host(default=DEFAULT_DB_ALIAS)
 
     db_for_write = db_for_read
